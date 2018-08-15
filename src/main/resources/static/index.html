@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="en" ng-app="app" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="en" ng-app="app" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="en" ng-app="app" class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Machine Settlement System</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+</head>
+<body>
+
+<div class="jumbotron">
+    <h3>Shop</h3>
+</div>
+
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">Shop</a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Machines<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/machines">List of machines</a></li>
+                        <li><a href="#/machines/add">Add machine</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Fillings<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/fillings/add">Add filling</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Workshop<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/orders/add">Add order</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+
+
+
+<div ng-view></div>
+
+<script src="/webjars/jquery/2.2.4/jquery.js"></script>
+<script src="/webjars/bootstrap/3.3.6/js/bootstrap.js"></script>
+<script src="/webjars/angularjs/1.4.9/angular.js"></script>
+<script src="/webjars/angularjs/1.4.9/angular-resource.js"></script>
+<script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
+
+<script src="/machine/machine.module.js"></script>
+<script src="/machine/machine.service.js"></script>
+
+<script src="/machine-list/machine-list.module.js"></script>
+<script src="/machine-list/machine-list.controller.js"></script>
+<script src="/machine-list/machine-list.routes.js"></script>
+
+<script src="/machine-create/machine-create.module.js"></script>
+<script src="/machine-create/machine-create.controller.js"></script>
+<script src="/machine-create/machine-create.routes.js"></script>
+
+<script src="/machine-edit/machine-edit.module.js"></script>
+<script src="/machine-edit/machine-edit.controller.js"></script>
+<script src="/machine-edit/machine-edit.routes.js"></script>
+
+<script src="/app.js"></script>
+
+</body>
+</html>

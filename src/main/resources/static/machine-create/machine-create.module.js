@@ -1,0 +1,1 @@
+angular.module('machine-create', ['machine', 'ngRoute']);

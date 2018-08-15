@@ -1,0 +1,1 @@
+angular.module('machine-list', ['ngRoute', 'machine']);

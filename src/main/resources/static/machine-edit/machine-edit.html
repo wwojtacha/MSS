@@ -1,0 +1,43 @@
+<form ng-submit="vm.update()">
+    <div class="form-group">
+        <label for="machine-name">Machine name</label>
+        <input class="form-control" id="machine-name" ng-model="vm.machine.name" />
+        <p class="red">{{vm.errors.name}}</p>
+    </div>
+    <div class="form-group">
+        <label for="machine-producer">Machine producer</label>
+        <input class="form-control" id="machine-producer"
+               ng-model="vm.machine.producer"/>
+        <p class="red">{{vm.errors.producer}}</p>
+    </div>
+
+    <div class="form-group">
+        <label for="machine-model">Machine model</label>
+        <input class="form-control" id="machine-model"
+               ng-model="vm.machine.model"/>
+        <p class="red">{{vm.errors.model}}</p>
+    </div>
+
+    <div class="form-group">
+        <label for="machine-productionYear">Production year</label>
+        <input class="form-control" id="machine-productionYear"
+               ng-model="vm.machine.productionYear"/>
+        <p class="red">{{vm.errors.productionYear}}</p>
+    </div>
+
+    <div class="form-group">
+        <label for="machine-status">Status</label>
+
+        <select class="form-control" id="machine-status"
+                ng-model="vm.machine.machineStatus">
+            <option value="IN_USE">IN_USE</option>
+            <option value="OUT_UF_USE">OUT_OF_USE</option>
+            <option value="SOLD">SOLD</option>
+
+        </select>
+        <p class="red">{{vm.errors.machineStatus}}</p>
+    </div>
+
+    <button class="btn btn-success" type="submit">Save</button>
+
+</form>

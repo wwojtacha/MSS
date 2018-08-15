@@ -1,0 +1,1 @@
+angular.module('machine-edit', ['ngRoute', 'machine']);
