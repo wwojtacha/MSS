@@ -1,0 +1,1 @@
+angular.module('fuel-create', ['fuel', 'ngRoute']);

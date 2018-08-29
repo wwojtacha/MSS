@@ -16,13 +16,13 @@
 <body>
 
 <div class="jumbotron">
-    <h3>Shop</h3>
+    <h3>Machine Settlement System</h3>
 </div>
 
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">Shop</a>
+            <a class="navbar-brand" href="#">MSS</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
@@ -36,13 +36,21 @@
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Fillings<span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#/fillings/add">Add filling</a></li>
+                        <li><a href="#/fuel">List of fillings</a></li>
+                        <li><a href="#/fuel/add">Add filling</a></li>
                     </ul>
                 </li>
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Workshop<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#/orders/add">Add order</a></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports<span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#/fuel/averageConsumption">Average consumption</a></li>
+
                     </ul>
                 </li>
             </ul>
@@ -62,6 +70,7 @@
 <script src="/webjars/angularjs/1.4.9/angular-resource.js"></script>
 <script src="/webjars/angularjs/1.4.9/angular-route.js"></script>
 
+
 <script src="/machine/machine.module.js"></script>
 <script src="/machine/machine.service.js"></script>
 
@@ -76,6 +85,32 @@
 <script src="/machine-edit/machine-edit.module.js"></script>
 <script src="/machine-edit/machine-edit.controller.js"></script>
 <script src="/machine-edit/machine-edit.routes.js"></script>
+
+
+<script src="/fuel-fillings/fuel.module.js"></script>
+<script src="/fuel-fillings/fuel.service.js"></script>
+
+
+<script src="/fuel-list/fuel-list.module.js"></script>
+<script src="/fuel-list/fuel-list.controller.js"></script>
+<script src="/fuel-list/fuel-list.routes.js"></script>
+
+<script src="/fuel-create/fuel-create.module.js"></script>
+<script src="/fuel-create/fuel-create.controller.js"></script>
+<script src="/fuel-create/fuel-create.routes.js"></script>
+
+<script src="/fuel-edit/fuel-edit.module.js"></script>
+<script src="/fuel-edit/fuel-edit.controller.js"></script>
+<script src="/fuel-edit/fuel-edit.routes.js"></script>
+
+
+<script src="/reports/reports.module.js"></script>
+<script src="/reports/reports.service.js"></script>
+
+
+<script src="/reports-list/reports-list.module.js"></script>
+<script src="/reports-list/reports-list.controller.js"></script>
+<script src="/reports-list/reports-list.routes.js"></script>
 
 <script src="/app.js"></script>
 

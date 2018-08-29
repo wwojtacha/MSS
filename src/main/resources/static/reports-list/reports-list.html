@@ -1,0 +1,17 @@
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <td>Machine number</td>
+        <td>Fuel quantity</td>
+        <td>Motohours</td>
+        <td>Average consumption [l/h]</td>
+    </thead>
+    <tbody>
+    <tr ng-repeat="consumption in vm.consumptions">
+        <td>{{consumption.machineNumber}}</td>
+        <td>{{consumption.fuelQuantity}}</td>
+        <td>{{machine.motohours}}</td>
+        <td>{{machine.averageConsumption}}</td>
+    </tr>
+    </tbody>
+</table>

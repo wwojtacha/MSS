@@ -1,1 +1,1 @@
-angular.module("machine", ['ngResource']);
+angular.module('machine', ['ngResource']);

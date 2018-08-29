@@ -1,0 +1,1 @@
+angular.module('fuel-list', ['ngRoute', 'fuel']);

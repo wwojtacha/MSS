@@ -1,7 +1,11 @@
 var app = angular.module('app', [
-    'machine-create',
     'machine-list',
-    'machine-edit'
+    'machine-create',
+    'machine-edit',
+    'fuel-list',
+    'fuel-create',
+    'fuel-edit',
+    'reports-list'
     ]
 
 );

@@ -1,0 +1,45 @@
+<form ng-submit="vm.create()">
+    <div class="form-group">
+        <label for="fuel-date">Date</label>
+        <input class="form-control" id="fuel-date" type="datetime-local" ng-model="vm.fuel.date" />
+        <p class="red">{{vm.errors.date}}</p>
+    </div>
+    <div class="form-group">
+        <label for="fuel-quantity">Fuel quantity</label>
+        <input class="form-control" id="fuel-quantity"
+               ng-model="vm.fuel.fuelQuantity"/>
+        <p class="red">{{vm.errors.fuelQuantity}}</p>
+    </div>
+
+    <div class="form-group">
+        <label for="fuel-price">Fuel price</label>
+        <input class="form-control" id="fuel-price"
+               ng-model="vm.fuel.fuelPrice"/>
+        <p class="red">{{vm.errors.fuelPrice}}</p>
+    </div>
+
+    <div class="form-group">
+        <label for="fuel-counterState">Counter state</label>
+        <input class="form-control" id="fuel-counterState"
+               ng-model="vm.fuel.counterState"/>
+        <p class="red">{{vm.errors.counterState}}</p>
+    </div>
+
+    <div class="form-group">
+        <label for="fuel-machineNumber">Machine number</label>
+        <input class="form-control" id="fuel-machineNumber"
+               ng-model="vm.fuel.machine.machineNumber"/>
+        <p class="red">{{vm.errors.machine}}</p>
+    </div>
+
+    <div class="form-group">
+        <label for="fuel-machineId">Machine Id</label>
+        <input class="form-control" id="fuel-machineId"
+               ng-model="vm.fuel.machine.id" type="hidden" />
+        <p class="red">{{vm.errors.machine}}</p>
+    </div>
+
+
+    <button class="btn btn-primary" type="submit">Create</button>
+
+</form>

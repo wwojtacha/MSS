@@ -1,0 +1,1 @@
+angular.module('reports-list', ['ngRoute', 'reports']);

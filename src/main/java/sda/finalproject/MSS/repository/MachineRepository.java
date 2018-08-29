@@ -36,5 +36,7 @@ public interface MachineRepository extends JpaRepository<Machine, Long> {
             Pageable pageable
     );
 
+    Machine findByMachineNumber(String machineNumber);
+
     boolean existsByMachineNumber(String machineNumber);
 }
