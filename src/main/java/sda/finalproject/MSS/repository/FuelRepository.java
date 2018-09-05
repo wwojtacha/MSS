@@ -19,7 +19,7 @@ import java.util.Map;
 @Repository
 public interface FuelRepository extends JpaRepository<Fuel, Long> {
 
-    boolean existsByMachineAndDate(Long machineId, LocalDateTime ldt);
+    boolean existsByMachine_IdAndDate(Long machineId, ZonedDateTime ldt);
 
     @Query(value = "SELECT fillings.*, machines.machine_number FROM fillings INNER JOIN machines ON fillings.machine_id = machines.id WHERE machines.machine_number LIKE %?1% AND fillings.date >= ?2 AND fillings.date <= ?3",
     nativeQuery = true)

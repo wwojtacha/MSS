@@ -9,16 +9,25 @@
     <title>Machine Settlement System</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/app.css">
     <link rel="stylesheet" href="/webjars/bootstrap/3.3.6/css/bootstrap.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
 </head>
 <body>
 
-<div class="jumbotron">
+
+
+
+<div class="container">
+
+    <img id="dumper" src="/images/dumper.jpg" alt="dumper" />
+
+<div class="site-title">
     <h3>Machine Settlement System</h3>
 </div>
 
+    <img id="excavator" src="/images/excavator.jpeg" alt="excavator" />
+<br/><br/><br/><br/><br/><br/>
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -40,17 +49,17 @@
                         <li><a href="#/fuel/add">Add filling</a></li>
                     </ul>
                 </li>
-                <li class="dropdown">
-                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Workshop<span class="caret"></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a href="#/orders/add">Add order</a></li>
-                    </ul>
-                </li>
+                <!--<li class="dropdown">-->
+                    <!--<a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Workshop<span class="caret"></span></a>-->
+                    <!--<ul class="dropdown-menu">-->
+                        <!--<li><a href="#/orders/add">Add order</a></li>-->
+                    <!--</ul>-->
+                <!--</li>-->
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Reports<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         <li><a href="#/fuel/averageConsumption">Average consumption</a></li>
-
+                        <li><a href="#/fuel/counters">Max counter states</a></li>
                     </ul>
                 </li>
             </ul>
@@ -60,7 +69,7 @@
 
 
 
-
+</div>
 
 <div ng-view></div>
 

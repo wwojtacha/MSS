@@ -12,7 +12,7 @@ angular.module('fuel-create')
                $location.path('/fuel');
            })
            .catch(function(response) {
-               vm.response = response.data;
+               vm.errors = response.data;
            });
    }
 

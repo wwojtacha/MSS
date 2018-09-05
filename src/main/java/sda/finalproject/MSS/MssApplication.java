@@ -14,13 +14,8 @@ public class MssApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MssApplication.class, args);
 
-//		PriceService priceService = new PriceService();
-//		try {
-//			priceService.downloadPrice();
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
-
+	FuelService fs = new FuelService();
+	fs.sendMail();
 
 	}
 }

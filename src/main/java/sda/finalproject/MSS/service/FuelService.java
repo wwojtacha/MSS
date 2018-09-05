@@ -16,6 +16,7 @@ import sda.finalproject.MSS.model.Machine;
 import sda.finalproject.MSS.repository.FuelRepository;
 import sda.finalproject.MSS.repository.MachineRepository;
 
+import javax.mail.MessagingException;
 import javax.validation.constraints.Null;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -32,6 +33,8 @@ public class FuelService {
     @Autowired
     MachineRepository machineRepository;
 
+    @Autowired
+    MailService mailService = new MailService();
 
     public Fuel getById(Long id) {
         Optional<Fuel> filling = fuelRepository.findById(id);
@@ -44,17 +47,21 @@ public class FuelService {
 
 
     public Fuel create(Fuel fuel, BindingResult bindingResult) {
-        if (fuel.getMachine().getMachineNumber() == null) {
-            throw new NullPointerException("Machine number is obligatory !");
-        }
-
-        if (!machineRepository.existsByMachineNumber(fuel.getMachine().getMachineNumber())) {
-            throw new NullPointerException(String.format("Machine of number %s does not exist.", fuel.getMachine().getMachineNumber()));
+        if (fuel.getMachine() == null || fuel.getMachine().getMachineNumber() == null) {
+            bindingResult.addError(new FieldError("fuel", "machineNumber", "Machine number must not be empty"));
         } else {
-            fuel.getMachine().setId(machineRepository.findByMachineNumber(fuel.getMachine().getMachineNumber()).getId());
+            if (!machineRepository.existsByMachineNumber(fuel.getMachine().getMachineNumber())) {
+                bindingResult.addError(new FieldError("fuel", "machineNumber", "Machine with this number does not exist"));
+            } else {
+                fuel.getMachine().setId(machineRepository.findByMachineNumber(fuel.getMachine().getMachineNumber()).getId());
+            }
         }
 
-        //validateFuel(fuel.getMachine().getId(), fuel.getDate(), bindingResult);
+        if (bindingResult.hasErrors()) {
+            throw new BindingResultException(bindingResult);
+        }
+
+        validateFuel(fuel.getMachine().getId(), fuel.getDate(), bindingResult);
         return fuelRepository.save(fuel);
     }
 
@@ -73,11 +80,11 @@ public class FuelService {
         //return fuelRepository.findByMachineAndDate(machineNumber, startDate, endDate, pageable);
     }
 
-    private void validateFuel(Long machineId, LocalDateTime fillingDateTime, BindingResult bindingResult) {
-        if (fuelRepository.existsByMachineAndDate(machineId, fillingDateTime)){
+    private void validateFuel(Long machineId, ZonedDateTime fillingDateTime, BindingResult bindingResult) {
+        if (fuelRepository.existsByMachine_IdAndDate(machineId, fillingDateTime)){
             bindingResult.addError(new FieldError(
                     "Filling",
-                    "name",
+                    "date", //field name "date" equal to "date" in vm.errors.date in fuel-create.html
                     String.format("Machine can not have multiple fillings at the same time")
             ));
 
@@ -102,7 +109,6 @@ public class FuelService {
             throw new NotFoundException(String.format("No filling with id %s", id));
         }
 
-//        validateFuel(fuel.getMachine().getId(), fuel.getDate(), bindingResult);
 
         fuel.setId(id);
         return fuelRepository.save(fuel);
@@ -117,4 +123,16 @@ public class FuelService {
     public List<AverageConsumption> countAverageConsumption() {
         return fuelRepository.countAverageConsumption();
     }
+
+    public void sendMail() {
+            String to = "wwojtacha@o2.pl";
+            String subject = "test mail";
+            String content = "test content";
+            try {
+                mailService.sendNotification(to, subject, content);
+            } catch (MessagingException e) {
+                e.printStackTrace();
+            }
+    }
+
 }

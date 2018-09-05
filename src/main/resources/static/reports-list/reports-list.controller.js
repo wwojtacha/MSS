@@ -3,17 +3,31 @@ angular.module('reports-list')
 
     var vm = this;
 
-    vm.search = search;
+    vm.getAverageConsumption = getAverageConsumption;
 
-    search();
+    getAverageConsumption();
 
-    function search() {
-        reportsService.search()
+    vm.getMaxCounterStates = getMaxCounterStates;
+
+    getMaxCounterStates();
+
+    function getAverageConsumption() {
+        reportsService.getAverageConsumption()
             .then(function(response) {
-                vm.consumptions = response.content;
+                vm.consumptions = response; //without "content". "content" for Page
             })
             .catch(function(response) {
                 alert(response.data.message);
+                vm.error = response.data.message;
+            });
+    }
+
+    function getMaxCounterStates() {
+        reportsService.getMaxCounterStates()
+            .then(function(response) {
+                vm.counterStates = response;
+            })
+            .catch(function(response) {
                 vm.error = response.data.message;
             });
     }

@@ -1,3 +1,5 @@
+<div class="container">
+
 <form ng-submit="vm.search()">
     <div class="form-group">
         <label for="machine-name">Machine name</label>
@@ -53,7 +55,7 @@
 
         <select class="form-control" id="machine-status" ng-model="vm.params.machineStatus">
             <option value="IN_USE">IN_USE</option>
-            <option value="OUT_UF_USE">OUT_OF_USE</option>
+            <option value="OUT_OF_USE">OUT_OF_USE</option>
             <option value="SOLD">SOLD</option>
 
         </select>
@@ -93,5 +95,5 @@
 </table>
 <p>{{vm.error}}</p>
 
-
+</div>
 

@@ -31,8 +31,9 @@ public class PriceService {
 
             //System.out.println(inputLine);
             urlList.add(inputLine);
-            //br.close();
+
         }
+        br.close();
 
         int priceIndex = urlList.indexOf("\t\t<td>Olej napędowy EURODIESEL</td>") + 1;
 

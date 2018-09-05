@@ -1,3 +1,5 @@
+<div class="container">
+
 <table class="table table-striped">
     <thead>
     <tr>
@@ -9,9 +11,11 @@
     <tbody>
     <tr ng-repeat="consumption in vm.consumptions">
         <td>{{consumption.machineNumber}}</td>
-        <td>{{consumption.fuelQuantity}}</td>
-        <td>{{machine.motohours}}</td>
-        <td>{{machine.averageConsumption}}</td>
+        <td>{{consumption.fuelQuantity | number: 2}}</td>
+        <td>{{consumption.motohours}}</td>
+        <td>{{consumption.averageConsumption | number : 2}}</td>
     </tr>
     </tbody>
 </table>
+
+</div>

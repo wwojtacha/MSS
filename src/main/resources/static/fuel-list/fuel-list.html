@@ -1,14 +1,13 @@
 
-<p> Current fuel price [zł\l]: {{vm.fuelPrice}}</p>
+<div class="container">
 
-<a href="#fuel/counters">
-    <button class="btn btn-primary" type="submit">Show last counter states</button>
-</a>
+<p id="fuel-price-css"> Current fuel net price (wholesale): {{vm.fuelPrice}} [zł/l] </p>
+
 
 <form ng-submit="vm.search()">
     <div class="form-group">
         <label for="fuel-machineNumber">Machine number</label>
-        <input class="form-control" id="fuel-machineNumber" ng-model="vm.params.fuel.machine.machineNumber" />
+        <input class="form-control" id="fuel-machineNumber" ng-model="vm.params.machineNumber" />
 
     </div>
     <div class="form-group">
@@ -22,12 +21,6 @@
         <label for="fuel-month">Month</label>
         <input class="form-control" id="fuel-month"
                ng-model="vm.month"/>
-    </div>
-
-    <div class="form-group">
-        <label for="fuel-day">Day</label>
-        <input class="form-control" id="fuel-day"
-               ng-model="vm.day"/>
     </div>
 
     <button class="btn btn-primary" type="submit">Search</button>
@@ -47,13 +40,14 @@
         <td>Action</td>
     </tr>
     </thead>
+
     <tbody>
     <tr ng-repeat="fuel in vm.fillings">
         <td>{{fuel.machine.machineNumber}}</td>
         <!--<td>{{fuel.date | date:'y'}}-{{fuel.date | date:'MM'}}-{{fuel.date | date:'d'}} {{fuel.date | date:'HH'}}:{{fuel.date | date:'mm'}}</td>-->
         <td>{{fuel.date | date : medium}}</td>
-        <td>{{fuel.fuelQuantity}}</td>
-        <td>{{fuel.fuelPrice}}</td>
+        <td>{{fuel.fuelQuantity | number : 2}}</td>
+        <td>{{fuel.fuelPrice | number : 2}}</td>
         <td>{{fuel.fuelQuantity * fuel.fuelPrice | number:2}}</td>
         <td>{{fuel.counterState}}</td>
         <td>
@@ -64,3 +58,5 @@
     </tbody>
 </table>
 <p>{{vm.error}}</p>
+
+</div>

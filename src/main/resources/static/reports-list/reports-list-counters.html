@@ -1,0 +1,17 @@
+<div class="container">
+
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <td>Machine number</td>
+            <td>Max counter state</td>
+        </thead>
+        <tbody>
+        <tr ng-repeat="counterState in vm.counterStates">
+            <td>{{counterState.machineNumber}}</td>
+            <td>{{counterState.counterState | number: 2}}</td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
