@@ -14,8 +14,6 @@ public class MssApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(MssApplication.class, args);
 
-	FuelService fs = new FuelService();
-	fs.sendMail();
 
 	}
 }

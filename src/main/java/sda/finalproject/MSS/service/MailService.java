@@ -23,12 +23,6 @@ public class MailService {
 
     public void sendNotification(String to, String subject, String content) throws MessagingException {
 
-//        SimpleMailMessage message = new SimpleMailMessage();
-//
-//        message.setTo(to);
-//        message.setSubject(subject);
-//        message.setText(content);
-
         MimeMessage message = mailSender.createMimeMessage();
         MimeMessageHelper helper = new MimeMessageHelper(message, false);
 

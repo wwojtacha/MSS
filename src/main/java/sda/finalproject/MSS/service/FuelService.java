@@ -111,6 +111,7 @@ public class FuelService {
 
 
         fuel.setId(id);
+        sendMail();
         return fuelRepository.save(fuel);
     }
 
